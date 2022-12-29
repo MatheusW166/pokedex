@@ -1,8 +1,8 @@
-import React from 'react';
+import { HelloWorld } from './components/HelloWorld';
 
 function App() {
 	return (
-		<p>Hello World</p>
+		<HelloWorld />
 	);
 }
 
