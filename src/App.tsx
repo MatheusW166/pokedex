@@ -1,8 +1,10 @@
-import { HelloWorld } from './components/HelloWorld';
+import { PokemonCard } from "./components/PokemonCard";
 
 function App() {
 	return (
-		<HelloWorld />
+		<div id="app" data-theme="light">
+			<PokemonCard pokemon={{ name: "Bulbassaur", order: 1, categories: [], image: "" }} />
+		</div>
 	);
 }
 

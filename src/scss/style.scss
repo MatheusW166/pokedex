@@ -1,1 +1,10 @@
+@import "reset";
+@import "global";
+@import "colors";
 @import "../components/**/*.scss";
+
+#app {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
