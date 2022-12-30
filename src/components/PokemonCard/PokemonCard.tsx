@@ -1,7 +1,7 @@
-import { Grass } from "../assets/categories/Grass";
-import { Categories } from "../models/Categories";
-import { Pokemon } from "../models/Pokemon";
-import { TypeBreadCup } from "./TypeBradcup";
+import { Grass } from "../Categories/Grass";
+import { Categories } from "../../models/Categories";
+import { Pokemon } from "../../models/Pokemon";
+import { TypeBreadCup } from "../TypeBreadCup/TypeBradcup";
 
 interface PokemonCardProps {
 	pokemon: Pokemon;

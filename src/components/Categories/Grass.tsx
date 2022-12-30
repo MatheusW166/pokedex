@@ -1,4 +1,4 @@
-export function GrassBg() {
+export function GrassBg(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +6,7 @@ export function GrassBg() {
       height="89"
       fill="none"
       viewBox="0 0 260 89"
+      {...props}
     >
       <g opacity="0.75">
         <path
@@ -49,15 +50,15 @@ export function GrassBg() {
   );
 }
 
-export function Grass() {
+export function Grass(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      className="grass"
       xmlns="http://www.w3.org/2000/svg"
       width="512"
       height="512"
       fill="var(--grass)"
       viewBox="0 0 512 512"
+      {...props}
     >
       <path
         fillRule="evenodd"
