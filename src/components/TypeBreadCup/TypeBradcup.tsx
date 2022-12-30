@@ -1,6 +1,6 @@
 /* eslint-disable quotes */
-import { Categories } from "../models/Categories";
-import { initCap } from "../utils/initCap";
+import { Categories } from "../../models/Categories";
+import "../../helpers/string.extensions";
 
 interface TypeBreadCupProps {
   type: Categories;
@@ -9,7 +9,7 @@ interface TypeBreadCupProps {
 export function TypeBreadCup({ type }: TypeBreadCupProps) {
   return (
     <p className={`type-breadcup ${type}`}>
-      {initCap(type)}
+      {type.initCap()}
     </p>
   );
 }
