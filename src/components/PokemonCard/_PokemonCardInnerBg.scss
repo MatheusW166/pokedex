@@ -56,8 +56,48 @@
         }
       }
     }
+    &.dragon {
+      background: var(--dragon75);
+      + .type-circle-mask {
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+    &.dark {
+      background: var(--dark75);
+      + .type-circle-mask {
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+    &.ghost {
+      background: var(--ghost75);
+      + .type-circle-mask {
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+    &.ground {
+      background: var(--ground75);
+      + .type-circle-mask {
+        svg {
+          transform: scale(1.02);
+        }
+      }
+    }
 
     // Backgrounds repositioned
+    &.water {
+      background: var(--water75);
+      + .type-circle-mask {
+        svg {
+          transform: translate(0, 15px);
+        }
+      }
+    }
     &.steel {
       background: var(--steel75);
       + .type-circle-mask {
@@ -95,12 +135,6 @@
     &.fighting {
       background: var(--fighting75);
     }
-    &.water {
-      background: var(--water75);
-    }
-    &.dark {
-      background: var(--dark75);
-    }
     &.poison {
       background: var(--poison75);
     }
@@ -110,19 +144,10 @@
     &.fire {
       background: var(--fire75);
     }
-    &.dragon {
-      background: var(--dragon75);
-    }
-    &.ghost {
-      background: var(--ghost75);
-    }
-
     &.ice {
       background: var(--ice75);
     }
-    &.ground {
-      background: var(--ground75);
-    }
+
     &.psychic {
       background: var(--psychic75);
     }
