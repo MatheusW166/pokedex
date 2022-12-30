@@ -36,7 +36,6 @@ function PokemonCardCategoriesBreadCups({ categories }: PokemonCardCategoriesBre
 	);
 }
 
-
 function PokemonCard({ pokemon }: PokemonCardProps) {
 	const { image, categories, name, order } = pokemon;
 	const firstSlotCategorie = categories[0];

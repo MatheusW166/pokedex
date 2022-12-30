@@ -1,6 +1,6 @@
-/* eslint-disable quotes */
 import { Categories } from "../../models/Categories";
 import "../../helpers/string.extensions";
+import clsx from "clsx";
 
 interface TypeBreadCupProps {
   type: Categories;
@@ -8,7 +8,7 @@ interface TypeBreadCupProps {
 
 export function TypeBreadCup({ type }: TypeBreadCupProps) {
   return (
-    <p className={`type-breadcup ${type}`}>
+    <p className={clsx("type-breadcup", type)}>
       {type.initCap()}
     </p>
   );
