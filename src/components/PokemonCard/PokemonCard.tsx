@@ -1,34 +1,63 @@
-import { Grass } from "../Categories/Grass";
-import { Categories } from "../../models/Categories";
 import { Pokemon } from "../../models/Pokemon";
 import { TypeBreadCup } from "../TypeBreadCup/TypeBradcup";
+import { Categories } from "../../models/Categories";
+import { PokemonTypeIcon } from "../PokemonTypeItems/PokemonTypeItems";
+import { PokemonCardInnerBg } from "./PokemonCardInnerBg";
+import { clsx } from "clsx";
+import "../../helpers/number.extensions";
 
 interface PokemonCardProps {
 	pokemon: Pokemon;
-	className?: string;
-	style?: React.CSSProperties;
 }
 
-export function PokemonCard({ pokemon, className, style }: PokemonCardProps) {
+interface PokemonCardImgProps {
+	img: string;
+	hasShadow?: boolean;
+	className?: string;
+}
+
+interface PokemonCardCategoriesBreadCupsProps {
+	categories: Categories[];
+}
+
+function PokemonCardImg({ img, className, hasShadow = true }: PokemonCardImgProps) {
 	return (
-		<article className={`pokemon-card ${className}`} style={style}>
-			<div className="pokemon-img">
-				<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt={pokemon.name} />
-			</div>
-			<div className="inner-bg"></div>
+		<div className={clsx("pokemon-img", hasShadow && "shadow", className,)}>
+			<img src={img}></img>
+		</div >
+	);
+}
+
+function PokemonCardCategoriesBreadCups({ categories }: PokemonCardCategoriesBreadCupsProps) {
+	return (
+		<>
+			{categories.map((name, idx) => <TypeBreadCup key={idx} type={name} />)}
+		</>
+	);
+}
+
+
+function PokemonCard({ pokemon }: PokemonCardProps) {
+	const { image, categories, name, order } = pokemon;
+	const firstSlotCategorie = categories[0];
+	return (
+		<article className="pokemon-card">
+			<PokemonCardImg img={image} />
+			<PokemonCardInnerBg category={firstSlotCategorie} />
 			<div className="types">
 				<div className="type-icon">
-					<Grass />
+					<PokemonTypeIcon category={firstSlotCategorie} />
 				</div>
 				<div className="type-names">
-					<TypeBreadCup type={Categories.Grass} />
-					<TypeBreadCup type={Categories.Poison} />
+					<PokemonCardCategoriesBreadCups categories={categories} />
 				</div>
 			</div>
 			<div className="characteristics">
-				<p>Nº 001</p>
-				<h2>{pokemon.name}</h2>
+				<p>Nº {order.padStart(3, "0")}</p>
+				<h2>{name}</h2>
 			</div>
 		</article>
 	);
 }
+
+export { PokemonCard, PokemonCardCategoriesBreadCups, PokemonCardImg };
