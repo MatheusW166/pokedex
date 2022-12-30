@@ -10,74 +10,92 @@
 
 @mixin light-theme-pokemon-categories-colors {
   --normal: #a8a77a;
+  --normal75: #a8a77abf;
   --normal-surface: #a8a77a5d;
   --normal-over-surface: #646348;
 
   --fire: #ee8130;
+  --fire75: #ee8130bf;
   --fire-surface: #ee81305d;
   --fire-over-surface: #9e5925;
 
   --water: #6390f0;
+  --water75: #6390f0bf;
   --water-surface: #6390f05d;
   --water-over-surface: #4361a1;
 
   --electric: #f7d02c;
+  --electric75: #f7d02cbf;
   --electric-surface: #f7d02c5d;
   --electric-over-surface: #7a6716;
 
   --grass: #7ac74c;
+  --grass75: #7ac74cbf;
   --grass-surface: #7ac74c5d;
   --grass-over-surface: #396f18;
 
   --ice: #96d9d6;
+  --ice75: #96d9d6bf;
   --ice-surface: #96d9d65d;
   --ice-over-surface: #1f7470;
 
   --fighting: #c22e28;
+  --fighting75: #c22e28bf;
   --fighting-surface: #c22e285d;
   --fighting-over-surface: #9c2722;
 
   --poison: #a33ea1;
+  --poison75: #a33ea1bf;
   --poison-surface: #a33ea15d;
   --poison-over-surface: #5b225a;
 
   --ground: #e2bf65;
+  --ground75: #e2bf65bf;
   --ground-surface: #e2bf655d;
   --ground-over-surface: #8a753e;
 
   --flying: #a98ff3;
+  --flying75: #a98ff3bf;
   --flying-surface: #a98ff35d;
   --flying-over-surface: #53457a;
 
   --psychic: #f95587;
+  --psychic75: #f95587bf;
   --psychic-surface: #f955875d;
   --psychic-over-surface: #a13757;
 
   --bug: #a6b91a;
+  --bug75: #a6b91abf;
   --bug-surface: #a6b91a5d;
   --bug-over-surface: #657110;
 
   --rock: #b6a136;
+  --rock75: #b6a136bf;
   --rock-surface: #b6a1365d;
   --rock-over-surface: #6b5f20;
 
   --ghost: #735797;
+  --ghost75: #735797bf;
   --ghost-surface: #7357975d;
   --ghost-over-surface: #4a3368;
 
   --dragon: #6f35fc;
+  --dragon75: #6f35fcbf;
   --dragon-surface: #6f35fc5d;
   --dragon-over-surface: #3d1e88;
 
   --dark: #705746;
+  --dark75: #705746bf;
   --dark-surface: #7057465d;
   --dark-over-surface: #533b2b;
 
   --steel: #b7b7ce;
+  --steel75: #b7b7cebf;
   --steel-surface: #b7b7ce5d;
   --steel-over-surface: #636371;
 
   --fairy: #d685ad;
+  --fairy75: #d685adbf;
   --fairy-surface: #d685ad5d;
   --fairy-over-surface: #8c2f5d;
 }
