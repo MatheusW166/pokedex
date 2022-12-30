@@ -1,5 +1,5 @@
 export function BugBg(props: React.SVGProps<SVGSVGElement>) {
-  <svg
+  return <svg
     width={238}
     height={201}
     fill="none"
@@ -118,7 +118,7 @@ export function BugBg(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Bug(props: React.SVGProps<SVGSVGElement>) {
-  <svg
+  return <svg
     fill="var(--bug)"
     height={512}
     width={512}
