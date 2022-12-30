@@ -20,123 +20,125 @@ import { Categories } from "../../models/Categories";
 
 interface PokemonTypeIconProps {
   category: Categories;
+  style?: React.CSSProperties;
 }
 
 interface PokemonTypeBgProps {
   category: Categories;
+  style?: React.CSSProperties;
 }
 
-export function PokemonTypeBg({ category }: PokemonTypeBgProps) {
-  let element = <NormalBg />;
+export function PokemonTypeBg({ category, style, ...props }: PokemonTypeBgProps) {
+  let element = <NormalBg style={style} {...props} />;
   switch (category) {
     case Categories.Grass:
-      element = <GrassBg />;
+      element = <GrassBg style={style} {...props} />;
       break;
     case Categories.Bug:
-      element = <BugBg />;
+      element = <BugBg style={style} {...props} />;
       break;
     case Categories.Dark:
-      element = <DarkBg />;
+      element = <DarkBg style={style} {...props} />;
       break;
     case Categories.Dragon:
-      element = <DragonBg />;
+      element = <DragonBg style={style} {...props} />;
       break;
     case Categories.Electric:
-      element = <ElectricBg />;
+      element = <ElectricBg style={style} {...props} />;
       break;
     case Categories.Fairy:
-      element = <FairyBg />;
+      element = <FairyBg style={style} {...props} />;
       break;
     case Categories.Ghost:
-      element = <GhostBg />;
+      element = <GhostBg style={style} {...props} />;
       break;
     case Categories.Ice:
-      element = <IceBg />;
+      element = <IceBg style={style} {...props} />;
       break;
     case Categories.Ground:
-      element = <GroundBg />;
+      element = <GroundBg style={style} {...props} />;
       break;
     case Categories.Rock:
-      element = <RockBg />;
+      element = <RockBg style={style} {...props} />;
       break;
     case Categories.Fighting:
-      element = <FightingBg />;
+      element = <FightingBg style={style} {...props} />;
       break;
     case Categories.Psychic:
-      element = <PsychicBg />;
+      element = <PsychicBg style={style} {...props} />;
       break;
     case Categories.Poison:
-      element = <PoisonBg />;
+      element = <PoisonBg style={style} {...props} />;
       break;
     case Categories.Water:
-      element = <WaterBg />;
+      element = <WaterBg style={style} {...props} />;
       break;
     case Categories.Fire:
-      element = <FireBg />;
+      element = <FireBg style={style} {...props} />;
       break;
     case Categories.Steel:
-      element = <SteelBg />;
+      element = <SteelBg style={style} {...props} />;
       break;
     case Categories.Flying:
-      element = <FlyingBg />;
+      element = <FlyingBg style={style} {...props} />;
       break;
   }
   return element;
 }
 
-export function PokemonTypeIcon({ category }: PokemonTypeIconProps) {
-  let element = <Normal />;
+export function PokemonTypeIcon({ category, style, ...props }: PokemonTypeIconProps) {
+  let element = <Normal style={style} {...props} />;
   switch (category) {
     case Categories.Grass:
-      element = <Grass />;
+      element = <Grass style={style} {...props} />;
       break;
     case Categories.Bug:
-      element = <Bug />;
+      element = <Bug style={style} {...props} />;
       break;
     case Categories.Dark:
-      element = <Dark />;
+      element = <Dark style={style} {...props} />;
       break;
     case Categories.Dragon:
-      element = <Dragon />;
+      element = <Dragon style={style} {...props} />;
       break;
     case Categories.Electric:
-      element = <Electric />;
+      element = <Electric style={style} {...props} />;
       break;
     case Categories.Fairy:
-      element = <Fairy />;
+      element = <Fairy style={style} {...props} />;
       break;
     case Categories.Ghost:
-      element = <Ghost />;
+      element = <Ghost style={style} {...props} />;
       break;
     case Categories.Ice:
-      element = <Ice />;
+      element = <Ice style={style} {...props} />;
       break;
     case Categories.Ground:
-      element = <Ground />;
+      element = <Ground style={style} {...props} />;
       break;
     case Categories.Rock:
-      element = <Rock />;
+      element = <Rock style={style} {...props} />;
       break;
     case Categories.Fighting:
-      element = <Fighting />;
+      element = <Fighting style={style} {...props} />;
       break;
     case Categories.Psychic:
-      element = <Psychic />;
+      element = <Psychic style={style} {...props} />;
       break;
     case Categories.Poison:
-      element = <Poison />;
+      element = <Poison style={style} {...props} />;
       break;
     case Categories.Water:
-      element = <Water />;
+      element = <Water style={style} {...props} />;
       break;
     case Categories.Fire:
-      element = <Fire />;
+      element = <Fire style={style} {...props} />;
       break;
     case Categories.Steel:
-      element = <Steel />;
+      element = <Steel style={style} {...props} />;
       break;
     case Categories.Flying:
-      element = <Flying />;
+      element = <Flying style={style} {...props} />;
       break;
   }
   return element;

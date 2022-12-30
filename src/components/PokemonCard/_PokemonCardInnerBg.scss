@@ -22,8 +22,8 @@
       bottom: 0;
       right: 0;
       transform: translate(-12px, -30px);
-      width: 238px;
-      height: 147px;
+      height: calc($pokemon-card-height + 5px);
+      width: calc($pokemon-card-width + 5px);
 
       svg {
         position: absolute;
@@ -37,8 +37,69 @@
     z-index: 1;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.25) inset;
 
+    // Backgrounds over type-circle
+    &.flying {
+      background: var(--flying75);
+      + .type-circle-mask {
+        z-index: 1;
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+    &.electric {
+      background: var(--electric75);
+      + .type-circle-mask {
+        z-index: 1;
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    // Backgrounds repositioned
+    &.steel {
+      background: var(--steel75);
+      + .type-circle-mask {
+        svg {
+          transform: scale(1.05);
+        }
+      }
+    }
     &.grass {
       background: var(--grass75);
+      + .type-circle-mask svg {
+        transform: translate(14px, 0);
+      }
+    }
+    &.rock {
+      background: var(--rock75);
+      + .type-circle-mask svg {
+        transform: translate(5px, 30px);
+      }
+    }
+    &.bug {
+      background: var(--bug75);
+      + .type-circle-mask svg {
+        transform: translate(0, 15px);
+      }
+    }
+    &.fairy {
+      background: var(--fairy75);
+      + .type-circle-mask svg {
+        transform: translate(4px, 18px);
+      }
+    }
+
+    // Backgrounds without special properties
+    &.fighting {
+      background: var(--fighting75);
+    }
+    &.water {
+      background: var(--water75);
+    }
+    &.dark {
+      background: var(--dark75);
     }
     &.poison {
       background: var(--poison75);
@@ -49,47 +110,21 @@
     &.fire {
       background: var(--fire75);
     }
-    &.flying {
-      background: var(--flying75);
-    }
-    &.fighting {
-      background: var(--fighting75);
-    }
-    &.water {
-      background: var(--water75);
-    }
-    &.dark {
-      background: var(--dark75);
-    }
-    &.electric {
-      background: var(--electric75);
-    }
-    &.ground {
-      background: var(--ground75);
-    }
-    &.psychic {
-      background: var(--psychic75);
-    }
-    &.rock {
-      background: var(--rock75);
-    }
-    &.ice {
-      background: var(--ice75);
-    }
-    &.bug {
-      background: var(--bug75);
-    }
     &.dragon {
       background: var(--dragon75);
     }
     &.ghost {
       background: var(--ghost75);
     }
-    &.steel {
-      background: var(--steel75);
+
+    &.ice {
+      background: var(--ice75);
     }
-    &.fairy {
-      background: var(--fairy75);
+    &.ground {
+      background: var(--ground75);
+    }
+    &.psychic {
+      background: var(--psychic75);
     }
   }
 }
