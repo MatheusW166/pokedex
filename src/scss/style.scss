@@ -1,10 +1,7 @@
 @import "reset";
 @import "global";
 @import "colors";
+@import "mixins";
+@import "app";
 @import "../components/**/*.scss";
-
-#app {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-}
+@import "../assets/**/*.scss";

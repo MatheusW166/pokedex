@@ -1,0 +1,10 @@
+@mixin flex-container($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin card-style() {
+  background: var(--gray-50);
+  box-shadow: var(--shadow-1);
+  border-radius: 16px;
+}
