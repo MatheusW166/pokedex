@@ -1,9 +1,10 @@
-import { PokemonRootEndpointResponseInterface } from "./endpoints_response_interfaces/pokemon_endpoint/PokemonRootEndpointResponseInterface";
+import { PokemonRootEndpointResponseInterface } from "./endpoints/pokemon/models/PokemonRootEndpointResponseInterface";
 import { PokemonApiRequestProtocols } from "./PokemonApiRequestProtocols";
+import { PokemonEndpointBaseUrl } from "./endpoints/pokemon/PokemonEndpointBase";
 import axios from "axios";
 
 const endpointPokemon = axios.create({
-  baseURL: "https://pokeapi.co/api/v2/pokemon/",
+  baseURL: PokemonEndpointBaseUrl,
   headers: { "Content-Type": "application/json" }
 });
 
