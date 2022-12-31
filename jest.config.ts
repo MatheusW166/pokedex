@@ -3,7 +3,9 @@ import type { Config } from "@jest/types";
 const config: Config.InitialOptions = {
   verbose: true,
   transform: {
-    "^.+\\.tsx ? $": "ts - jest",
+    "^.+\\.tsx ? $": "ts-jest",
   },
+  preset: "ts-jest",
+  roots: ["<rootDir>/test"],
 };
 export default config;
