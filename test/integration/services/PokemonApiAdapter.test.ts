@@ -1,14 +1,11 @@
 import { PokemonApiAdapter } from "../../../src/services/PokemonApiAdapter";
 import { describe, expect, it } from "@jest/globals";
 
-describe("retrieve something from pokeapi", () => {
+describe("retrieving data from api with PokemonApiAdapter", () => {
   const instance = new PokemonApiAdapter();
 
-  it("should return OK", async () => {
+  it("getPokemons() should return 30 elements", async () => {
     const resp = await instance.getPokemons();
-    console.log(resp);
-    expect(resp.status).toBe(200);
+    expect(resp.results.length).toBe(30);
   });
 });
-
-export { };
