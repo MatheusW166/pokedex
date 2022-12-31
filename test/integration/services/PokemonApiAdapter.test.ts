@@ -1,5 +1,4 @@
 import { PokemonApiAdapter } from "../../../src/services/PokemonApiAdapter";
-import { describe, expect, it } from "@jest/globals";
 
 describe("retrieving data from api with PokemonApiAdapter", () => {
   const instance = new PokemonApiAdapter();
