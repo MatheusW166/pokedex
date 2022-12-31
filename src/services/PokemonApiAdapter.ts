@@ -1,6 +1,6 @@
 import { PokemonRootEndpointResponseInterface } from "./endpoints/pokemon/models/PokemonRootEndpointResponseInterface";
 import { PokemonApiRequestProtocols } from "./PokemonApiRequestProtocols";
-import { PokemonEndpointBaseUrl } from "./endpoints/pokemon/PokemonEndpointBase";
+import { PokemonEndpointBaseUrl } from "./endpoints/pokemon/PokemonEndpointBaseUrl";
 import axios from "axios";
 
 const endpointPokemon = axios.create({
@@ -9,18 +9,20 @@ const endpointPokemon = axios.create({
 });
 
 export class PokemonApiAdapter implements PokemonApiRequestProtocols {
-  getPokemons(limit: number, offset: number): PokemonRootEndpointResponseInterface {
-    endpointPokemon.get("/", {
+  async getPokemons(limit = 30, offset = 0): Promise<PokemonRootEndpointResponseInterface> {
+    const resp = await endpointPokemon.get("/", {
       params: {
-        limit: limit ?? 30,
-        offset: offset ?? 0,
+        limit: limit,
+        offset: offset,
       },
     });
+
+    const { count, next, previous, results } = resp.data;
     return {
-      count: 10,
-      next: "",
-      previous: "",
-      results: [],
+      count,
+      next,
+      previous,
+      results,
     };
   }
 }
