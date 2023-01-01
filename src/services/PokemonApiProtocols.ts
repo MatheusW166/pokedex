@@ -1,5 +1,5 @@
 import { PokemonRootEndpointResponseInterface } from "./endpoints/pokemon/models/PokemonRootEndpointResponseInterface";
 
-export interface PokemonApiRequestProtocols {
+export interface PokemonApiProtocols {
   getPokemons(limit: number, offset: number): Promise<PokemonRootEndpointResponseInterface>;
 }
