@@ -8,7 +8,7 @@ import { PokemonEndpointResponse } from "./endpoints/endpoint_pokemon/models/Pok
 import axios, { AxiosError } from "axios";
 import { RequestError } from "../errors/RequestError";
 
-const client = axios.create({
+const axiosInstance = axios.create({
   baseURL: PokemonApiBaseUrl,
   headers: { "Content-Type": "application/json" }
 });
@@ -19,7 +19,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     offset = 0
   ): Promise<PokemonRootEndpointResponse | RequestError> {
     try {
-      const resp = await client.get(EndpointPokemon, {
+      const resp = await axiosInstance.get(EndpointPokemon, {
         params: {
           limit: limit,
           offset: offset
@@ -36,7 +36,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     id: number
   ): Promise<PokemonEndpointResponse | RequestError> {
     try {
-      const resp = await client.get(`${EndpointPokemon}/${id}`);
+      const resp = await axiosInstance.get(`${EndpointPokemon}/${id}`);
       return resp.data as PokemonEndpointResponse;
     } catch (err) {
       return this.handleError(err);
@@ -47,7 +47,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     name: string
   ): Promise<PokemonEndpointResponse | RequestError> {
     try {
-      const resp = await client.get(`${EndpointPokemon}/${name}`);
+      const resp = await axiosInstance.get(`${EndpointPokemon}/${name}`);
       return resp.data as PokemonEndpointResponse;
     } catch (err) {
       return this.handleError(err);
