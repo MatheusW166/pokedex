@@ -1,10 +1,14 @@
-import { ApiProtocols, RequestError } from "./ApiProtocols";
-import { PokemonEndpointResponseInterface } from "./endpoints/endpoint_pokemon/models/PokemonEndpointResponseInterface";
-import { PokemonRootEndpointResponseInterface } from "./endpoints/endpoint_pokemon/models/PokemonRootEndpointResponseInterface";
+import { RequestError } from "../errors/RequestError";
+import { PokemonEndpointResponse } from "./endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
+import { PokemonRootEndpointResponse } from "./endpoints/endpoint_pokemon/models/PokemonRootEndpointResponse";
 
-export interface PokemonApiProtocols extends ApiProtocols {
-  getPokemons(limit: number, offset: number): Promise<PokemonRootEndpointResponseInterface | RequestError>;
-  getPokemonByName(name: string): Promise<PokemonEndpointResponseInterface | RequestError>;
-  getPokemonById(id: number): Promise<PokemonEndpointResponseInterface | RequestError>;
+export interface PokemonApiProtocols {
+  getPokemons(
+    limit: number,
+    offset: number
+  ): Promise<PokemonRootEndpointResponse | RequestError>;
+  getPokemonByName(
+    name: string
+  ): Promise<PokemonEndpointResponse | RequestError>;
+  getPokemonById(id: number): Promise<PokemonEndpointResponse | RequestError>;
 }
-
