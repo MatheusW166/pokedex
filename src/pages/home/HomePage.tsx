@@ -4,7 +4,7 @@ import { PokemonRootEndpointResponse } from "../../services/endpoints/endpoint_p
 import { PokemonEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
 import { isRequestError, RequestError } from "../../errors/RequestError";
 import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
-import { Categories } from "../../models/Categories";
+import { Categories, toCategory } from "../../models/Categories";
 
 const client = new PokemonApiAdapter();
 type Pokemon = PokemonEndpointResponse;
@@ -51,13 +51,7 @@ export function HomePage() {
   }
 
   function getPokemonCategories(pokemon: Pokemon): Categories[] {
-    return pokemon.types.map((type) => {
-      const typeName = type.type.name;
-      if (Object.values(Categories).includes(typeName as Categories)) {
-        return typeName as Categories;
-      }
-      return Categories.Normal;
-    });
+    return pokemon.types.map((type) => toCategory(type.type.name));
   }
 
   return (

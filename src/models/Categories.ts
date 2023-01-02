@@ -18,3 +18,14 @@ export enum Categories {
   Steel = "steel",
   Fairy = "fairy"
 }
+
+/**
+ * @param {string} name - a name to convert
+ * @returns {Categories} - Categories equivalent
+ */
+export function toCategory(name: string): Categories {
+  if (Object.values(Categories).includes(name as Categories)) {
+    return name as Categories;
+  }
+  return Categories.Normal;
+}
