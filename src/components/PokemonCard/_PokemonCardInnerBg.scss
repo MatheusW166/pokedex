@@ -5,14 +5,15 @@
 
   .type-circle,
   .type-circle-mask {
+    aspect-ratio: 1;
     position: absolute;
     width: 50%;
-    aspect-ratio: 1;
-    border-radius: 100%;
+    border-radius: 50%;
     bottom: 0;
     right: 0;
+    transition: width $pokemon-card-animation-time, transform $pokemon-card-animation-time,
+      border-radius $pokemon-card-animation-time;
     transform: translate(10%, 20%);
-    transition: $pokemon-card-animation-time;
   }
 
   .type-circle-mask {

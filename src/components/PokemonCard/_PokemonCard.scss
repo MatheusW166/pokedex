@@ -28,8 +28,8 @@ $pokemon-card-animation-time: ease 0.3s;
 }
 
 .pokemon-card {
-  width: $pokemon-card-width;
   aspect-ratio: $pokemon-card-aspect-ratio;
+  width: $pokemon-card-width;
   padding: 16px;
   @include card-style();
   @include flex-container(column);
@@ -118,10 +118,9 @@ $pokemon-card-animation-time: ease 0.3s;
   &:hover {
     .inner-bg .type-circle,
     .inner-bg .type-circle-mask {
-      transform: translate(0);
       width: 100%;
-      height: 100%;
-      border-radius: 0;
+      transform: translate(0);
+      border-radius: 16px;
     }
 
     .inner-bg .masked-item {
