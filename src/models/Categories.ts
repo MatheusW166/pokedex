@@ -1,4 +1,4 @@
-export const enum Categories {
+export enum Categories {
   Normal = "normal",
   Fire = "fire",
   Water = "water",
@@ -16,5 +16,5 @@ export const enum Categories {
   Dragon = "dragon",
   Dark = "dark",
   Steel = "steel",
-  Fairy = "fairy",
+  Fairy = "fairy"
 }
