@@ -74,7 +74,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     }
 
     return {
-      name: "Unknown Error",
+      name: "unknown",
       message: "Something went wrong",
       data: err ?? {}
     };
