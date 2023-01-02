@@ -4,7 +4,7 @@ export function ShapeDividerTriangle(props: React.SVGProps<SVGSVGElement>) {
   return <svg
     width={1440}
     height={120}
-    fill="none"
+    fill="#fff"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >

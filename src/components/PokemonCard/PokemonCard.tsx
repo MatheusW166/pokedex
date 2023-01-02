@@ -1,4 +1,3 @@
-import { Pokemon } from "../../models/Pokemon";
 import { TypeBreadCup } from "../TypeBreadCup/TypeBradcup";
 import { Categories } from "../../models/Categories";
 import { PokemonTypeIcon } from "../PokemonTypeItems/PokemonTypeItems";
@@ -7,7 +6,10 @@ import { clsx } from "clsx";
 import "../../helpers/number.extensions";
 
 interface PokemonCardProps {
-	pokemon: Pokemon;
+	name: string;
+	image: string;
+	categories: Categories[];
+	order: number;
 }
 
 interface PokemonCardImgProps {
@@ -22,9 +24,9 @@ interface PokemonCardCategoriesBreadCupsProps {
 
 function PokemonCardImg({ img, className, hasShadow = true }: PokemonCardImgProps) {
 	return (
-		<div className={clsx("pokemon-img", hasShadow && "shadow", className,)}>
+		<div className={clsx("pokemon-img", hasShadow && "shadow", className)}>
 			<img src={img}></img>
-		</div >
+		</div>
 	);
 }
 
@@ -36,16 +38,14 @@ function PokemonCardCategoriesBreadCups({ categories }: PokemonCardCategoriesBre
 	);
 }
 
-function PokemonCard({ pokemon }: PokemonCardProps) {
-	const { image, categories, name, order } = pokemon;
-	const firstSlotCategorie = categories[0];
+function PokemonCard({ image, categories, name, order }: PokemonCardProps) {
 	return (
 		<article className="pokemon-card">
 			<PokemonCardImg img={image} />
-			<PokemonCardInnerBg category={firstSlotCategorie} />
+			<PokemonCardInnerBg category={categories[0]} />
 			<div className="types">
 				<div className="type-icon">
-					<PokemonTypeIcon category={firstSlotCategorie} />
+					<PokemonTypeIcon category={categories[0]} />
 				</div>
 				<div className="type-names">
 					<PokemonCardCategoriesBreadCups categories={categories} />

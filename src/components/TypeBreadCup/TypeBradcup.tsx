@@ -4,11 +4,12 @@ import clsx from "clsx";
 
 interface TypeBreadCupProps {
   type: Categories;
+  className?: string;
 }
 
-export function TypeBreadCup({ type }: TypeBreadCupProps) {
+export function TypeBreadCup({ type, className }: TypeBreadCupProps) {
   return (
-    <p className={clsx("type-breadcup", type)}>
+    <p className={clsx("type-breadcup", type, className)}>
       {type.initCap()}
     </p>
   );
