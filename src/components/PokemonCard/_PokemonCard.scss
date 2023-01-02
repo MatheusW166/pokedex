@@ -1,5 +1,5 @@
 $pokemon-card-width: 242px;
-$pokemon-card-height: 148px;
+$pokemon-card-aspect-ratio: 16 / 10;
 
 .pokemon-img {
   position: relative;
@@ -27,7 +27,7 @@ $pokemon-card-height: 148px;
 
 .pokemon-card {
   width: $pokemon-card-width;
-  height: $pokemon-card-height;
+  aspect-ratio: $pokemon-card-aspect-ratio;
   padding: 16px;
   @include card-style();
   @include flex-container(column);
@@ -85,9 +85,31 @@ $pokemon-card-height: 148px;
   .characteristics,
   .types {
     p,
-    h2,
+    h2 {
+      position: relative;
+      width: fit-content;
+      z-index: 1;
+      transition: color ease 0.3s;
+    }
+
     svg {
-      transition: ease 0.3s;
+      transition: fill ease 0.3s;
+    }
+
+    p::after,
+    h2::after,
+    svg::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      left: 0;
+      z-index: -1;
+      filter: blur(4px);
+      border-radius: 100%;
+      opacity: 0;
+      transition: opacity ease 0.3s;
     }
   }
 
@@ -107,7 +129,11 @@ $pokemon-card-height: 148px;
       svg {
         color: var(--bg-primary);
         fill: var(--bg-primary);
-        text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+      }
+
+      p::after,
+      h2::after {
+        opacity: 0.6;
       }
     }
   }
