@@ -1,0 +1,8 @@
+.pokemon-page {
+  @include flex-container;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1295px;
+  justify-content: center;
+  margin: 32px;
+}
