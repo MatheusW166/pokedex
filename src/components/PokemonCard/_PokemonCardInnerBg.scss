@@ -6,13 +6,13 @@
   .type-circle,
   .type-circle-mask {
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: 50%;
+    aspect-ratio: 1;
     border-radius: 100%;
     bottom: 0;
     right: 0;
-    transform: translate(12px, 30px);
-    transition: ease 0.3s;
+    transform: translate(10%, 20%);
+    transition: $pokemon-card-animation-time;
   }
 
   .type-circle-mask {
@@ -21,9 +21,10 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      transform: translate(-12px, -30px);
-      width: calc($pokemon-card-width);
-      aspect-ratio: $pokemon-card-aspect-ratio;
+      transform: translate(0, calc(-1 * 20%));
+      width: 100%;
+      height: 100%;
+      transition: transform $pokemon-card-animation-time;
 
       svg {
         position: absolute;
