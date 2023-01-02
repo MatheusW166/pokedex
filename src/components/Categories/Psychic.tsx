@@ -3,6 +3,8 @@ export function PsychicBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={148}
       height={147}
+      viewBox="0 0 148 147"
+      preserveAspectRatio="xMaxYMid meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

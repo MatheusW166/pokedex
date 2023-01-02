@@ -3,6 +3,8 @@ export function WaterBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={238}
       height={149}
+      viewBox="0 0 238 146"
+      preserveAspectRatio="xMidYMax slice"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

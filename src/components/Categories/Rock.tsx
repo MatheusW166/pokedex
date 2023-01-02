@@ -3,6 +3,8 @@ export function RockBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={236}
       height={103}
+      viewBox="0 0 236 103"
+      preserveAspectRatio="xMidYMax meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

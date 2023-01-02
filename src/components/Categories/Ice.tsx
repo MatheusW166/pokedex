@@ -3,6 +3,8 @@ export function IceBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={237}
       height={113}
+      viewBox="0 0 237 113"
+      preserveAspectRatio="xMidYMid meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

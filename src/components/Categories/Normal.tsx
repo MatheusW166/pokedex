@@ -1,13 +1,15 @@
 export function NormalBg(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      viewBox="0 0 260 147"
       width={260}
       height={147}
+      preserveAspectRatio="xMidYMax meet"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g opacity={0.75} clipPath="url(#a)">
+      <g opacity={0.75}>
         <path
           d="M227.754 18.054c-5.346 9.17-25.315-9.526-7.02-3.192-12.314-3.947-12.853-17.093-.718-5.317-9.511-8.387-4.62-19.064 3.834-3.887.428-11.034 8.907-3.707 5.471 5.044 9.244-15.747 10.066 11.929-1.567 7.352Z"
           fill="#601E04"
@@ -471,15 +473,6 @@ export function NormalBg(props: React.SVGProps<SVGSVGElement>) {
           fill="#680000"
         />
       </g>
-      <defs>
-        <clipPath id="a">
-          <path
-            fill="#fff"
-            transform="matrix(-1 0 0 1 260 0)"
-            d="M0 0h260v147H0z"
-          />
-        </clipPath>
-      </defs>
     </svg>
   );
 }

@@ -3,6 +3,8 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={237}
       height={189}
+      viewBox="0 0 237 189"
+      preserveAspectRatio="xMidYMax slice"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
@@ -24,7 +26,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="d"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -60,7 +62,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="g"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -96,7 +98,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="j"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -132,7 +134,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="m"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -168,7 +170,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="p"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -192,7 +194,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="s"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -232,7 +234,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="v"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -264,7 +266,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="y"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -308,7 +310,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="B"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -344,7 +346,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="E"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -372,7 +374,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="H"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -408,7 +410,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="K"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -452,7 +454,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
           <mask
             id="N"
             style={{
-              maskType: "alpha",
+              maskType: "alpha"
             }}
             maskUnits="userSpaceOnUse"
             x={-10355}
@@ -828,7 +830,6 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
         </clipPath>
       </defs>
     </svg>
-
   );
 }
 

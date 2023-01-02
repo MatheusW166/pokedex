@@ -3,6 +3,8 @@ export function SteelBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={237}
       height={148}
+      viewBox="0 0 237 148"
+      preserveAspectRatio="xMidYMid slice"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
