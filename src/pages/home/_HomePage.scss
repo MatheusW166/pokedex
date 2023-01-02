@@ -1,8 +1,32 @@
-.pokemon-page {
-  @include flex-container;
-  flex-wrap: wrap;
-  gap: 32px;
+.pokedex {
+  @include flex-container(column);
+  gap: 56px;
   max-width: 1295px;
-  justify-content: center;
-  margin: 32px;
+  margin: 0 auto;
+  padding: 24px;
+
+  h2 {
+    font-size: 32px;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .pokedex-list {
+    @include flex-container;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+
+    .pokemon-card {
+      flex: 1 1 $pokemon-card-width;
+    }
+  }
+}
+
+@media screen and (width<=580px) {
+  .pokedex-list {
+    .pokemon-card {
+      margin: 0 auto;
+    }
+  }
 }
