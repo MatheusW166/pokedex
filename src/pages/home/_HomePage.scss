@@ -23,10 +23,10 @@
   }
 }
 
-@media screen and (width<=580px) {
+@media screen and (width<=578px) {
   .pokedex-list {
-    .pokemon-card {
-      margin: 0 auto;
+    img {
+      max-height: 180px;
     }
   }
 }
