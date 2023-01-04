@@ -1,7 +1,11 @@
+// Libs
+@use "sass:math";
+// Sorted files
 @import "reset";
 @import "global";
 @import "colors";
 @import "mixins";
 @import "app";
+// Components and page styles
 @import "../components/**/*.scss";
 @import "../pages/**/*.scss";

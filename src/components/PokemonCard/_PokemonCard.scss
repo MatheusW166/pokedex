@@ -1,5 +1,5 @@
 $pokemon-card-width: 242px;
-$pokemon-card-aspect-ratio: 16 / 10;
+$pokemon-card-aspect-ratio: math.div(16, 10);
 $pokemon-card-animation-time: ease 0.3s;
 
 .pokemon-img {
