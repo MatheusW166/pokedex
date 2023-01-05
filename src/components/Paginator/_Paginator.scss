@@ -1,0 +1,38 @@
+.paginator {
+  @include flex-container;
+  gap: 16px;
+  align-items: center;
+
+  p {
+    font-size: 16px;
+    color: var(--gray-800);
+    font-weight: 500;
+    span {
+      color: var(--red-500);
+    }
+  }
+
+  div {
+    @include flex-container;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 2px solid var(--red-500);
+    cursor: pointer;
+
+    ion-icon {
+      line-height: 0;
+      font-size: 32px;
+      color: var(--red-500);
+    }
+
+    &:first-child ion-icon {
+      transform: translateX(-1px);
+    }
+    &:last-child ion-icon {
+      transform: translateX(1px);
+    }
+  }
+}

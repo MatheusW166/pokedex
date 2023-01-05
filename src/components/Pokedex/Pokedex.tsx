@@ -1,36 +1,27 @@
 import { useEffect, useState } from "react";
 import { PokemonApiAdapter } from "../../services/PokemonApiAdapter";
-import { PokemonRootEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonRootEndpointResponse";
 import { PokemonEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
 import { isRequestError, RequestError } from "../../errors/RequestError";
 import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
 import { Categories, toCategory } from "../../models/Categories";
+import { PokemonRootEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonRootEndpointResponse";
+import React from "react";
 
 type Pokemon = PokemonEndpointResponse;
+type PokemonPage = PokemonRootEndpointResponse;
 type DetailsPromise = Promise<Pokemon | RequestError>;
 
 interface PokedexProps {
-  limit?: number;
-  offset?: number;
   apiAdapter?: PokemonApiAdapter;
+  pokemonPage?: PokemonPage;
 }
 
-export function Pokedex({
-  offset,
-  limit = 20,
+export const Pokedex = React.memo(function Pokedex({
+  pokemonPage,
   apiAdapter = new PokemonApiAdapter()
 }: PokedexProps) {
-  const [pokemonPage, setPokemonPage] = useState<PokemonRootEndpointResponse>();
+  console.log("Renderizou: " + pokemonPage?.count);
   const [pokemonsPageDetails, setPokemonsPageDetails] = useState<Pokemon[]>();
-
-  async function getPokemonPage() {
-    const res = await apiAdapter.getPokemons(limit, offset);
-    if (isRequestError(res)) {
-      return;
-    }
-    res.results;
-    setPokemonPage(res);
-  }
 
   async function getPokemonsPageDetails() {
     if (!pokemonPage) return;
@@ -43,10 +34,6 @@ export function Pokedex({
     const resolved = promisesResult.filter((res) => !isRequestError(res));
     setPokemonsPageDetails(resolved as Pokemon[]);
   }
-
-  useEffect(() => {
-    getPokemonPage();
-  }, []);
 
   useEffect(() => {
     getPokemonsPageDetails();
@@ -78,4 +65,4 @@ export function Pokedex({
       })}
     </>
   );
-}
+});

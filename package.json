@@ -13,8 +13,10 @@
     "push-major": "npm version major && git push"
   },
   "dependencies": {
+    "@ionic/react": "^6.4.1",
     "axios": "^1.2.2",
     "clsx": "^1.2.1",
+    "ionicons": "^6.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

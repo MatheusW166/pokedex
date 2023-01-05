@@ -1,9 +1,18 @@
 .pokedex {
   @include flex-container(column);
-  gap: 56px;
+  gap: 64px;
   max-width: 1295px;
   margin: 0 auto;
   padding: 24px;
+
+  .page {
+    @include flex-container(column);
+    gap: 64px;
+  }
+
+  .paginator {
+    margin-left: auto;
+  }
 
   h2 {
     font-size: 32px;
