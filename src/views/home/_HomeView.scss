@@ -1,0 +1,15 @@
+.home {
+  .pokedex-page {
+    @include flex-container(column);
+    gap: 64px;
+    max-width: 1295px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 32px;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+}
