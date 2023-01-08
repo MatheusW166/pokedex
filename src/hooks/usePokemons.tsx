@@ -28,10 +28,6 @@ export function usePokemonsPage({
   }
   const calcTotalPages = () => Math.ceil(pokemonPageData?.count ?? 0 / pageLimit);
 
-  useEffect(() => {
-    searchPokemonPage(1);
-  }, []);
-
   return {
     pageData: {
       pokemonPageData,
@@ -53,7 +49,6 @@ export function usePokemons({
 
   async function searchPokemons() {
     if (!pageData.pokemonPageData) return;
-
     const promises: DetailsPromise[] = [];
     pageData.pokemonPageData.results.forEach((item) => {
       promises.push(apiAdapter.getPokemonByName(item.name));
@@ -61,7 +56,6 @@ export function usePokemons({
 
     const promisesResult = await Promise.all(promises);
     const resolved = promisesResult.filter((res) => !isRequestError(res));
-
     setPokemons(resolved as Pokemon[]);
   }
 

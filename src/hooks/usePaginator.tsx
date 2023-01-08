@@ -5,23 +5,22 @@ import qs from "query-string";
 export function usePaginator() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [page, setPage] = useState<number>();
+  const [page, setPage] = useState(initializePageFromUrl() ?? 1);
 
-  function getPageFromUrl() {
-    const urlParams = new URLSearchParams(location.search);
-    const page = Number(urlParams.get("page"));
-    if (!isNaN(page)) {
-      setPage(page);
-    }
+  function initializePageFromUrl() {
+    const initialPage = qs.parse(location.search)["page"];
+    if (initialPage) return Number(initialPage);
   }
 
   function updateUrlPage() {
-    const urlParams = new URLSearchParams(location.search);
-    urlParams.set("page", `${page}`);
-    navigate({});
+    navigate({
+      search: qs.stringify({ page: page })
+    });
   }
 
   useEffect(() => {
-    getPageFromUrl();
-  }, []);
+    updateUrlPage();
+  }, [page]);
+
+  return { page, setPage };
 }
