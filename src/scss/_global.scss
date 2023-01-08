@@ -1,4 +1,10 @@
+// Generic style
 * {
   box-sizing: border-box;
   user-select: none;
 }
+
+// Global variables
+$pokemon-card-width: 242px;
+$pokemon-card-aspect-ratio: math.div(16, 10);
+$pokemon-card-animation-time: ease 0.3s;
