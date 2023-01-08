@@ -4,8 +4,8 @@ import { chevronForwardOutline, chevronBackOutline } from "ionicons/icons";
 interface PaginatorProps {
   pageNumber: number;
   totalPages: number;
-  onNavigateNext(): number;
-  onNavigateBack(): number;
+  onNavigateNext(): void;
+  onNavigateBack(): void;
 }
 
 export function Paginator({
