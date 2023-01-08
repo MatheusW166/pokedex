@@ -1,9 +1,9 @@
-import { HomePage } from "./pages/home/HomePage";
+import { HomeView } from "./views/home/HomeView";
 
 function App() {
   return (
     <div id="app" data-theme="light">
-      <HomePage />
+      <HomeView />
     </div>
   );
 }
