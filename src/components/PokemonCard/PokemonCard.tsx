@@ -1,8 +1,10 @@
-import { TypeBreadCup } from "../TypeBreadCup/TypeBradcup";
+import { TypeBreadCup } from "../TypeBreadCup";
 import { Categories } from "../../models/Categories";
-import { PokemonTypeIcon } from "../PokemonTypeItems/PokemonTypeItems";
+import { PokemonTypeIcon } from "../PokemonTypeItems";
 import { PokemonCardInnerBg } from "./PokemonCardInnerBg";
 import { clsx } from "clsx";
+import { useObserveElementResize } from "../../hooks/useObserveElementResize";
+import { getPercentualSize } from "../../utils/pokemonCardUtils";
 import "../../helpers/number.extensions";
 
 interface PokemonCardProps {
@@ -20,13 +22,10 @@ interface PokemonCardImgProps {
 
 interface PokemonCardCategoriesBreadCupsProps {
   categories: Categories[];
+  style?: React.CSSProperties;
 }
 
-function PokemonCardImg({
-  img,
-  className,
-  hasShadow = true
-}: PokemonCardImgProps) {
+function PokemonCardImg({ img, className, hasShadow = true }: PokemonCardImgProps) {
   return (
     <div className={clsx("pokemon-img", hasShadow && "shadow", className)}>
       <img src={img}></img>
@@ -35,33 +34,80 @@ function PokemonCardImg({
 }
 
 function PokemonCardCategoriesBreadCups({
-  categories
+  categories,
+  style
 }: PokemonCardCategoriesBreadCupsProps) {
   return (
     <>
       {categories.map((name, idx) => (
-        <TypeBreadCup key={idx} type={name} />
+        <TypeBreadCup key={idx} type={name} style={style} />
       ))}
     </>
   );
 }
 
 function PokemonCard({ image, categories, name, order }: PokemonCardProps) {
+  const { size, ref } = useObserveElementResize<HTMLElement>();
+
   return (
-    <article className="pokemon-card">
+    <article ref={ref} className="pokemon-card">
       <PokemonCardImg img={image} />
       <PokemonCardInnerBg category={categories[0]} />
       <div className="types">
         <div className="type-icon">
-          <PokemonTypeIcon category={categories[0]} />
+          <PokemonTypeIcon
+            style={{
+              width: getPercentualSize({
+                percent: 0.085,
+                baseSize: size.width,
+                minSize: 22
+              }),
+              height: getPercentualSize({
+                percent: 0.085,
+                baseSize: size.width,
+                minSize: 22
+              })
+            }}
+            category={categories[0]}
+          />
         </div>
         <div className="type-names">
-          <PokemonCardCategoriesBreadCups categories={categories} />
+          <PokemonCardCategoriesBreadCups
+            style={{
+              fontSize: getPercentualSize({
+                percent: 0.04,
+                baseSize: size.width,
+                minSize: 10
+              }),
+              lineHeight: getPercentualSize({ percent: 0.005, baseSize: size.width }) / 2
+            }}
+            categories={categories}
+          />
         </div>
       </div>
       <div className="characteristics">
-        <p>Nº {order.padStart(3, "0")}</p>
-        <h2>{name.initCap()}</h2>
+        <p
+          style={{
+            fontSize: getPercentualSize({
+              percent: 0.048,
+              baseSize: size.width,
+              minSize: 12
+            })
+          }}
+        >
+          Nº {order.padStart(3, "0")}
+        </p>
+        <h2
+          style={{
+            fontSize: getPercentualSize({
+              percent: 0.065,
+              baseSize: size.width,
+              minSize: 14
+            })
+          }}
+        >
+          {name.initCap()}
+        </h2>
       </div>
     </article>
   );

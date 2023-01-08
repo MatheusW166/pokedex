@@ -1,5 +1,5 @@
 import { Categories } from "../../models/Categories";
-import { PokemonTypeBg } from "../PokemonTypeItems/PokemonTypeItems";
+import { PokemonTypeBg } from "../PokemonTypeItems";
 import clsx from "clsx";
 
 interface PokemonCardInnerBgProps {

@@ -1,68 +1,31 @@
-import { useEffect, useState } from "react";
-import { PokemonApiAdapter } from "../../services/PokemonApiAdapter";
-import { PokemonEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
-import { isRequestError, RequestError } from "../../errors/RequestError";
-import { PokemonCard } from "../../components/PokemonCard/PokemonCard";
-import { Categories, toCategory } from "../../models/Categories";
-import { PokemonRootEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonRootEndpointResponse";
-import React from "react";
+import { usePokemons } from "../../hooks/usePokemons";
+import { Paginator } from "../Paginator";
+import { PokedexList } from "./PokedexList";
 
-type Pokemon = PokemonEndpointResponse;
-type PokemonPage = PokemonRootEndpointResponse;
-type DetailsPromise = Promise<Pokemon | RequestError>;
+export function Pokedex() {
+  const { pokemonsData, searchPokemonPage } = usePokemons({});
 
-interface PokedexProps {
-  apiAdapter?: PokemonApiAdapter;
-  pokemonPage?: PokemonPage;
-}
-
-export const Pokedex = React.memo(function Pokedex({
-  pokemonPage,
-  apiAdapter = new PokemonApiAdapter()
-}: PokedexProps) {
-  console.log("Renderizou: " + pokemonPage?.count);
-  const [pokemonsPageDetails, setPokemonsPageDetails] = useState<Pokemon[]>();
-
-  async function getPokemonsPageDetails() {
-    if (!pokemonPage) return;
-    const promises: DetailsPromise[] = [];
-    pokemonPage.results.forEach((item) => {
-      promises.push(apiAdapter.getPokemonByName(item.name));
-    });
-
-    const promisesResult = await Promise.all(promises);
-    const resolved = promisesResult.filter((res) => !isRequestError(res));
-    setPokemonsPageDetails(resolved as Pokemon[]);
-  }
-
-  useEffect(() => {
-    getPokemonsPageDetails();
-  }, [pokemonPage]);
-
-  function getPokemonImg(pokemon: Pokemon): string {
-    return (
-      pokemon.sprites.other.dream_world.front_default ??
-      pokemon.sprites.other["official-artwork"].front_default
-    );
-  }
-
-  function getPokemonCategories(pokemon: Pokemon): Categories[] {
-    return pokemon.types.map((type) => toCategory(type.type.name));
-  }
+  const buildPaginator = () => (
+    <Paginator
+      pageNumber={1}
+      totalPages={pokemonsData.pageData.totalPages}
+      onNavigateBack={() => {
+        return 1;
+      }}
+      onNavigateNext={() => {
+        searchPokemonPage(2);
+        return 1;
+      }}
+    />
+  );
 
   return (
-    <>
-      {pokemonsPageDetails?.map((pk, idx) => {
-        return (
-          <PokemonCard
-            key={idx}
-            order={pk.order}
-            name={pk.name}
-            image={getPokemonImg(pk)}
-            categories={getPokemonCategories(pk)}
-          />
-        );
-      })}
-    </>
+    <div className="pokedex">
+      {buildPaginator()}
+      <div className="pokedex-list">
+        <PokedexList pokemonPageDetails={pokemonsData.pokemons} />
+      </div>
+      {buildPaginator()}
+    </div>
   );
-});
+}

@@ -1,0 +1,8 @@
+.pokedex {
+  @include flex-container(column);
+  gap: 64px;
+
+  .paginator {
+    margin-left: auto;
+  }
+}
