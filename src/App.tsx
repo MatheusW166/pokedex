@@ -1,9 +1,12 @@
-import { HomeView } from "./views/home/HomeView";
+import { BrowserRouter } from "react-router-dom";
+import { MyRoutes } from "./routes";
 
 function App() {
   return (
     <div id="app" data-theme="light">
-      <HomeView />
+      <BrowserRouter>
+        <MyRoutes />
+      </BrowserRouter>
     </div>
   );
 }
