@@ -7,8 +7,6 @@ export interface PokemonApiProtocols {
     limit: number,
     offset: number
   ): Promise<PokemonRootEndpointResponse | RequestError>;
-  getPokemonByName(
-    name: string
-  ): Promise<PokemonEndpointResponse | RequestError>;
+  getPokemonByName(name: string): Promise<PokemonEndpointResponse | RequestError>;
   getPokemonById(id: number): Promise<PokemonEndpointResponse | RequestError>;
 }

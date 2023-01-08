@@ -1,9 +1,6 @@
 import { PokemonRootEndpointResponse } from "./endpoints/endpoint_pokemon/models/PokemonRootEndpointResponse";
 import { PokemonApiProtocols } from "./PokemonApiProtocols";
-import {
-  PokemonApiBaseUrl,
-  EndpointPokemon
-} from "./endpoints/PokemonApiEndpoints";
+import { PokemonApiBaseUrl, EndpointPokemon } from "./endpoints/PokemonApiEndpoints";
 import { PokemonEndpointResponse } from "./endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
 import axios, { AxiosError } from "axios";
 import { RequestError } from "../errors/RequestError";
@@ -32,9 +29,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     }
   }
 
-  async getPokemonById(
-    id: number
-  ): Promise<PokemonEndpointResponse | RequestError> {
+  async getPokemonById(id: number): Promise<PokemonEndpointResponse | RequestError> {
     try {
       const resp = await axiosInstance.get(`${EndpointPokemon}/${id}`);
       return resp.data as PokemonEndpointResponse;
@@ -43,9 +38,7 @@ export class PokemonApiAdapter implements PokemonApiProtocols {
     }
   }
 
-  async getPokemonByName(
-    name: string
-  ): Promise<PokemonEndpointResponse | RequestError> {
+  async getPokemonByName(name: string): Promise<PokemonEndpointResponse | RequestError> {
     try {
       const resp = await axiosInstance.get(`${EndpointPokemon}/${name}`);
       return resp.data as PokemonEndpointResponse;
