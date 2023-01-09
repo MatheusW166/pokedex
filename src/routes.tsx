@@ -5,7 +5,7 @@ export function MyRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
-      <Route index={true} path="/home" element={<HomeView />} />
+      <Route path="/home" element={<HomeView />} />
     </Routes>
   );
 }
