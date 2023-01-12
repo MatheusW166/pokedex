@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/pokedex/",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "jest",
     "push": "npm version patch && git push",
