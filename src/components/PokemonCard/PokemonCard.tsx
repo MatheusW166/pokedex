@@ -7,6 +7,8 @@ import { useObserveElementResize } from "../../hooks/useObserveElementResize";
 import { getPercentualSize } from "../../utils/pokemonCardUtils";
 import "../../helpers/number.extensions";
 import { playAnimation } from "../../utils/playAnimation";
+import { useContext } from "react";
+import { LoadingContext } from "../Pokedex/Pokedex";
 
 interface PokemonCardProps {
   name: string;
@@ -28,9 +30,10 @@ interface PokemonCardCategoriesBreadCupsProps {
 }
 
 function PokemonCardImg({ img, className, hasShadow = true }: PokemonCardImgProps) {
+  const loadContext = useContext(LoadingContext);
   return (
     <div className={clsx("pokemon-img", hasShadow && "shadow", className)}>
-      <img src={img}></img>
+      <img src={img} onLoad={loadContext?.onLoad}></img>
     </div>
   );
 }

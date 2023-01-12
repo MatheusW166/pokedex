@@ -4,16 +4,15 @@
 
   .paginator {
     margin-left: auto;
-    transition: opacity ease 2s;
-
-    &.hidden {
-      opacity: 0;
-    }
   }
 
   .loader {
     position: absolute;
     right: 50%;
     top: 50%;
+  }
+
+  .hidden {
+    opacity: 0;
   }
 }

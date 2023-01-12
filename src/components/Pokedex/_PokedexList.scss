@@ -1,14 +1,15 @@
 .pokedex-list {
-  @include flex-container;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 32px;
-}
+  div {
+    @include flex-container;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
 
-@media screen and (width<=578px) {
-  .pokedex-list {
-    .pokemon-card img {
-      max-height: 180px;
+    .pokemon-card:nth-last-child(1) {
+      margin-right: auto;
+    }
+    .pokemon-card:nth-last-child(2) {
+      margin-left: auto;
     }
   }
 }

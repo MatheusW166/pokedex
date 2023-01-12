@@ -28,6 +28,7 @@
   opacity: 0;
   aspect-ratio: $pokemon-card-aspect-ratio;
   flex: 1 1 $pokemon-card-width;
+  max-width: 380px;
   padding: 16px;
   @include card-style();
   @include flex-container(column);

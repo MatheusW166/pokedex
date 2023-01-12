@@ -4,14 +4,16 @@ import React from "react";
 import { getPokemonCategories, getPokemonImg } from "../../utils/pokemonCardUtils";
 
 interface PokedexListProps {
+  className?: string;
   pokemonPageDetails?: PokemonEndpointResponse[];
 }
 
 export const PokedexList = React.memo(function PokedexList({
-  pokemonPageDetails
+  pokemonPageDetails,
+  className
 }: PokedexListProps) {
   return (
-    <>
+    <div className={className}>
       {pokemonPageDetails?.map((pk, idx) => {
         return (
           <PokemonCard
@@ -24,6 +26,6 @@ export const PokedexList = React.memo(function PokedexList({
           />
         );
       })}
-    </>
+    </div>
   );
 });

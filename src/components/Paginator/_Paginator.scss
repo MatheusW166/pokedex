@@ -20,6 +20,7 @@
     height: 50px;
     border-radius: 100%;
     border: 2px solid var(--red-500);
+    transition: transform ease 0.3s;
     cursor: pointer;
 
     ion-icon {
@@ -33,6 +34,13 @@
     }
     &:last-child ion-icon {
       transform: translateX(1px);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    &:active {
+      transform: scale(0.95);
     }
   }
 }
