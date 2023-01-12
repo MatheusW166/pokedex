@@ -7,6 +7,7 @@ import sassGlobImports from "vite-plugin-sass-glob-import";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), sassGlobImports()],
+  base: "/pokedex/",
   css: {
     postcss: {
       plugins: [autoprefixer({})]
