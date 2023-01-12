@@ -22,9 +22,9 @@ jobs:
         run: npm ci
 
       - name: Pre Deploy
-        run: npm run build
+        run: npm run predeploy
 
       - name: Deploy
-        run: gh-pages -d build
+        run: npm run deploy
         env:
           GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
