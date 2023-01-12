@@ -12,7 +12,7 @@
     "push-minor": "npm version minor && git push",
     "push-major": "npm version major && git push",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@ionic/react": "^6.4.1",
