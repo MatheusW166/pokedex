@@ -26,7 +26,7 @@ export function usePokemonsPage({
     }
     setPokemonPageData(res);
   }
-  const calcTotalPages = () => Math.ceil(pokemonPageData?.count ?? 0 / pageLimit);
+  const calcTotalPages = () => Math.ceil((pokemonPageData?.count ?? 0) / pageLimit);
 
   return {
     pageData: {

@@ -6,12 +6,14 @@ import { clsx } from "clsx";
 import { useObserveElementResize } from "../../hooks/useObserveElementResize";
 import { getPercentualSize } from "../../utils/pokemonCardUtils";
 import "../../helpers/number.extensions";
+import { playAnimation } from "../../utils/playAnimation";
 
 interface PokemonCardProps {
   name: string;
   image: string;
   categories: Categories[];
   order: number;
+  appearOrder: number;
 }
 
 interface PokemonCardImgProps {
@@ -46,11 +48,16 @@ function PokemonCardCategoriesBreadCups({
   );
 }
 
-function PokemonCard({ image, categories, name, order }: PokemonCardProps) {
+function PokemonCard({ image, categories, name, order, appearOrder }: PokemonCardProps) {
   const { size, ref } = useObserveElementResize<HTMLElement>();
 
+  playAnimation(ref);
   return (
-    <article ref={ref} className="pokemon-card">
+    <article
+      style={{ animationDelay: `${(appearOrder + 1) * 0.1}s` }}
+      ref={ref}
+      className="pokemon-card"
+    >
       <PokemonCardImg img={image} />
       <PokemonCardInnerBg category={categories[0]} />
       <div className="types">

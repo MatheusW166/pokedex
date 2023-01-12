@@ -16,6 +16,7 @@ export const PokedexList = React.memo(function PokedexList({
         return (
           <PokemonCard
             key={idx}
+            appearOrder={idx}
             order={pk.order}
             name={pk.name}
             image={getPokemonImg(pk)}

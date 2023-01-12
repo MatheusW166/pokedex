@@ -1,7 +1,9 @@
 import { IonIcon } from "@ionic/react";
+import clsx from "clsx";
 import { chevronForwardOutline, chevronBackOutline } from "ionicons/icons";
 
 interface PaginatorProps {
+  className?: string;
   pageNumber: number;
   totalPages: number;
   onNavigateNext(): void;
@@ -11,11 +13,12 @@ interface PaginatorProps {
 export function Paginator({
   pageNumber,
   totalPages,
+  className,
   onNavigateBack,
   onNavigateNext
 }: PaginatorProps) {
   return (
-    <div className="paginator">
+    <div className={clsx("paginator", className)}>
       <div onClick={onNavigateBack}>
         <IonIcon icon={chevronBackOutline}></IonIcon>
       </div>

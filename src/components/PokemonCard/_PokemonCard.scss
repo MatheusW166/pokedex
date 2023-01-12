@@ -24,6 +24,8 @@
 }
 
 .pokemon-card {
+  animation: appearCardAnimation 0.3s ease forwards;
+  opacity: 0;
   aspect-ratio: $pokemon-card-aspect-ratio;
   flex: 1 1 $pokemon-card-width;
   padding: 16px;
@@ -68,6 +70,7 @@
 
   .characteristics {
     @include flex-container(column);
+    width: 54%;
     gap: 12px;
 
     p {
@@ -79,6 +82,8 @@
       font-size: 16px;
       color: var(--text-primary);
       font-weight: 600;
+      max-width: 100%;
+      text-overflow: clip;
     }
   }
 
@@ -97,8 +102,7 @@
     }
 
     p::after,
-    h2::after,
-    svg::after {
+    h2::after {
       content: "";
       position: absolute;
       width: 100%;
@@ -107,7 +111,7 @@
       left: 0;
       z-index: -1;
       filter: blur(4px);
-      border-radius: 100%;
+      border-radius: 150px;
       opacity: 0;
       transition: opacity $pokemon-card-animation-time;
     }
@@ -137,8 +141,24 @@
 
       p::after,
       h2::after {
-        opacity: 0.6;
+        opacity: 1;
       }
     }
+
+    .types {
+      p::after {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@keyframes appearCardAnimation {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
