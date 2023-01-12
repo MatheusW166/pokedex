@@ -4,7 +4,7 @@ import { MyRoutes } from "./routes";
 function App() {
   return (
     <div id="app" data-theme="light">
-      <BrowserRouter>
+      <BrowserRouter basename="/pokedex">
         <MyRoutes />
       </BrowserRouter>
     </div>
