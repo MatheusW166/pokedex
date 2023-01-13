@@ -1,17 +1,15 @@
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { after } from "../../utils/after";
 import { usePaginator } from "../../hooks/usePaginator";
 import { usePokemons } from "../../hooks/usePokemons";
 import { Paginator } from "../Paginator";
-import { PokedexList } from "./PokedexList";
 import { Loader } from "../Loader/Loader";
 import clsx from "clsx";
-
-interface LoadingContextProps {
-  onLoad?(): undefined;
-}
-
-export const LoadingContext = createContext<LoadingContextProps | null>(null);
+import { PokemonEndpointResponse } from "../../services/endpoints/endpoint_pokemon/models/PokemonEndpointResponse";
+import React from "react";
+import { PokemonCard } from "../PokemonCard";
+import { getPokemonCategories, getPokemonImg } from "../../utils/pokemonCardUtils";
+import { LoadingContext } from "../../contexts/LoadingContext";
 
 export function Pokedex() {
   const { pokemonsData, searchPokemonPage } = usePokemons({});
@@ -55,13 +53,33 @@ export function Pokedex() {
           />
         </div>
       </LoadingContext.Provider>
-      <Paginator
-        className={isLoading ? "hidden" : ""}
-        pageNumber={page}
-        totalPages={pokemonsData.pageData.totalPages}
-        onNavigateBack={() => verifyAndSetPage(page - 1)}
-        onNavigateNext={() => verifyAndSetPage(page + 1)}
-      />
     </div>
   );
 }
+
+interface PokedexListProps {
+  className?: string;
+  pokemonPageDetails?: PokemonEndpointResponse[];
+}
+
+export const PokedexList = React.memo(function PokedexList({
+  pokemonPageDetails,
+  className
+}: PokedexListProps) {
+  return (
+    <div className={className}>
+      {pokemonPageDetails?.map((pk, idx) => {
+        return (
+          <PokemonCard
+            key={idx}
+            appearOrder={idx}
+            order={pk.order}
+            name={pk.name}
+            image={getPokemonImg(pk)}
+            categories={getPokemonCategories(pk)}
+          />
+        );
+      })}
+    </div>
+  );
+});
