@@ -1,6 +1,7 @@
 .pokedex {
   @include flex-container(column);
   gap: 64px;
+  position: relative;
 
   .paginator {
     margin-left: auto;
@@ -8,20 +9,20 @@
 
   .loader {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: calc(50% - 24px);
   }
 
   .hidden {
     opacity: 0;
   }
-}
 
-.pokedex-list {
-  div {
-    @include flex-container;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 32px;
+  .pokedex-list {
+    div {
+      @include flex-container;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 32px;
+    }
   }
 }

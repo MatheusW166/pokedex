@@ -4,7 +4,7 @@
 }
 
 @mixin card-style() {
-  background: var(--gray-50);
+  background: var(--card-bg);
   box-shadow: var(--shadow-1);
   border-radius: 16px;
 }

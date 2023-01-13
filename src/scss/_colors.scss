@@ -1,4 +1,5 @@
 @mixin general-use-colors {
+  --white: #fff;
   --gray-50: #fafafa;
   --gray-100: #f0f0f0;
   --gray-200: #a9a9a9;
@@ -119,7 +120,8 @@
   --loader-inner: var(--red-400);
   --loader-outter: var(--red-500);
   --border: var(--gray-200);
-  --shadow-1: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  --card-bg: var(--white);
+  --shadow-1: 0 32px 35px rgba(0, 0, 0, 0.06), 0 45px 24px rgba(0, 0, 0, 0.02);
   --shadow-2: rgba(0, 0, 0, 0.25);
   --shadow-3: rgba(0, 0, 2, 0.15);
 }
