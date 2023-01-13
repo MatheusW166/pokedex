@@ -12,7 +12,7 @@ export function ElectricBg(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <g opacity={0.75}>
-        <path d="M0 145.56h237V.56H0v145Z" fill="url(#b)" fillOpacity={0.5} />
+        <path d="M0 145.56h237V.56H0v145Z" fillOpacity={0.5} />
         <g opacity={0.3} fill="#F66">
           <path d="M146.952-80.709H94.511l25.994 151.216-25.994 151.217h52.441L120.957 70.508l25.995-151.216Z" />
           <path d="m227.025 193.314 18.541-15.881 18.54-15.881-143.215-91.181L14.437-52.3l-18.54 15.88-18.541 15.881 143.215 91.182 106.454 122.67Z" />
@@ -35,10 +35,7 @@ export function ElectricBg(props: React.SVGProps<SVGSVGElement>) {
           d="m185.134 101.186 15.218 8.512 10.129-8.512 16.604 6.272v-3.584l-17.406-6.048-10.847 8.064-13.698-4.704Z"
           fill="#BF2222"
         />
-        <path
-          d="m221.567 107.738 9.835 5.16-.983 2.001-8.852-7.161Z"
-          fill="#BF2222"
-        />
+        <path d="m221.567 107.738 9.835 5.16-.983 2.001-8.852-7.161Z" fill="#BF2222" />
         <path
           d="m153.193 95.915 24.13 18.984-8.16 3.866 12.368 14.971-5.289-2.364 10.499 13.83h22.536l-27.285-24.27 8.637-6.033-43.266-27.505 9.101 9.316-3.271-.795ZM144.966 84.94v.93l2.397 1.524-2.397-2.455ZM190.467 84.94l-18.911-1.521 18.911 4.17M174.847 28.632l-26.344 16.401 15.44-4.727 15.058-9.11-4.767-2.733"
           fill="#FFC966"
@@ -113,19 +110,6 @@ export function ElectricBg(props: React.SVGProps<SVGSVGElement>) {
           fill="#BF2222"
         />
       </g>
-      <defs>
-        <radialGradient
-          id="b"
-          cx={0}
-          cy={0}
-          r={1}
-          gradientUnits="userSpaceOnUse"
-          gradientTransform="rotate(40.581 -4.925 215.118) scale(130.81 129.257)"
-        >
-          <stop stopColor="#FF4D4D" />
-          <stop offset={1} stopColor="#E63131" />
-        </radialGradient>
-      </defs>
     </svg>
   );
 }
