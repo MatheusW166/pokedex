@@ -1,15 +1,85 @@
 .home {
-  .pokedex-page {
+  main {
     @include flex-container(column);
-    gap: 64px;
-    max-width: 1295px;
-    margin: 0 auto;
-    padding: 24px;
-  }
+    gap: 96px;
 
-  h2 {
-    font-size: 32px;
-    color: var(--text-primary);
-    font-weight: 600;
+    & > section:nth-child(1) {
+      background: var(--bg-gradient-home);
+      height: 598px;
+      position: relative;
+
+      .container {
+        max-width: 1295px;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        padding: 0 24px;
+        @include flex-container(column);
+        justify-content: flex-end;
+
+        .logo-name {
+          z-index: 1;
+          margin-bottom: auto;
+          margin-top: 16px;
+          width: 304px;
+        }
+
+        .title {
+          margin-bottom: 78px;
+          position: relative;
+          z-index: 1;
+          max-width: 512px;
+          @include flex-container(column);
+          gap: 12px;
+          h1 {
+            font-weight: 700;
+            font-size: 56px;
+            color: var(--title);
+            line-height: 78px;
+          }
+          p {
+            font-weight: 500;
+            font-size: 32px;
+            color: var(--subtitle);
+            line-height: 44px;
+          }
+        }
+
+        .pokeball-concept {
+          width: 778px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          z-index: 0;
+        }
+      }
+
+      .divider {
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        @include flex-container;
+        align-items: flex-end;
+        .shape-divider-triangle {
+          width: 100%;
+          fill: var(--bg-primary);
+        }
+      }
+    }
+
+    & > section:nth-child(2) {
+      @include flex-container(column);
+      gap: 56px;
+      max-width: 1295px;
+      margin: 0 auto;
+      padding: 0 24px 48px 24px;
+
+      h2 {
+        font-size: 32px;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+    }
   }
 }
