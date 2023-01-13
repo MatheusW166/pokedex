@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    env:
+      environment: gh-pages
 
     steps:
       - name: Checkout repo

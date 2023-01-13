@@ -4,7 +4,9 @@ import { MyRoutes } from "./routes";
 function App() {
   return (
     <div id="app" data-theme="light">
-      <BrowserRouter basename="/pokedex">
+      <BrowserRouter
+        basename={process.env["environment"] === "gh-pages" ? "/pokedex" : "/"}
+      >
         <MyRoutes />
       </BrowserRouter>
     </div>
