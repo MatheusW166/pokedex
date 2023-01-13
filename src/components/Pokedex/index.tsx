@@ -1,4 +1,3 @@
-import { Pokedex } from "./Pokedex";
-import { PokedexList } from "./PokedexList";
+import { Pokedex, PokedexList } from "./Pokedex";
 
 export { Pokedex, PokedexList };
