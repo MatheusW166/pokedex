@@ -8,7 +8,7 @@ import { getPercentualSize } from "../../utils/pokemonCardUtils";
 import "../../helpers/number.extensions";
 import { playAnimation } from "../../utils/playAnimation";
 import { useContext } from "react";
-import { LoadingContext } from "../Pokedex/Pokedex";
+import { LoadingContext } from "../../contexts/LoadingContext";
 
 interface PokemonCardProps {
   name: string;
@@ -70,12 +70,14 @@ function PokemonCard({ image, categories, name, order, appearOrder }: PokemonCar
               width: getPercentualSize({
                 percent: 0.085,
                 baseSize: size.width,
-                minSize: 22
+                minSize: 22,
+                maxSize: 32
               }),
               height: getPercentualSize({
                 percent: 0.085,
                 baseSize: size.width,
-                minSize: 22
+                minSize: 22,
+                maxSize: 32
               })
             }}
             category={categories[0]}
@@ -87,7 +89,8 @@ function PokemonCard({ image, categories, name, order, appearOrder }: PokemonCar
               fontSize: getPercentualSize({
                 percent: 0.04,
                 baseSize: size.width,
-                minSize: 10
+                minSize: 10,
+                maxSize: 16
               }),
               lineHeight: getPercentualSize({ percent: 0.005, baseSize: size.width }) / 2
             }}
@@ -101,7 +104,8 @@ function PokemonCard({ image, categories, name, order, appearOrder }: PokemonCar
             fontSize: getPercentualSize({
               percent: 0.048,
               baseSize: size.width,
-              minSize: 12
+              minSize: 12,
+              maxSize: 16
             })
           }}
         >
@@ -112,7 +116,8 @@ function PokemonCard({ image, categories, name, order, appearOrder }: PokemonCar
             fontSize: getPercentualSize({
               percent: 0.065,
               baseSize: size.width,
-              minSize: 14
+              minSize: 14,
+              maxSize: 22
             })
           }}
         >
