@@ -8,11 +8,20 @@
 
   .loader {
     position: absolute;
-    right: 50%;
     top: 50%;
+    left: calc(50% - 24px);
   }
 
   .hidden {
     opacity: 0;
+  }
+}
+
+.pokedex-list {
+  div {
+    @include flex-container;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
   }
 }
