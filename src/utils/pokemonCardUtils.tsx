@@ -16,12 +16,15 @@ interface GetPercentualSizeProps {
   percent: number;
   baseSize: number;
   minSize?: number;
+  maxSize?: number;
 }
 
 export function getPercentualSize({
   percent,
   baseSize,
-  minSize = -1
+  minSize = -1,
+  maxSize
 }: GetPercentualSizeProps): number {
-  return Math.max(Math.round(baseSize * percent), minSize);
+  const size = Math.max(Math.round(baseSize * percent), minSize);
+  return maxSize && maxSize < size ? maxSize : size;
 }
