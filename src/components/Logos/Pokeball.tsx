@@ -33,66 +33,51 @@ export function PokeballConcept(props: React.SVGProps<SVGSVGElement>) {
 export function Pokeball(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width={291}
-      height={325}
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      width="261"
+      height="261"
+      fill="none"
+      viewBox="0 0 261 261"
+      className="pokeball"
       {...props}
     >
-      <g opacity={0.15} filter="url(#a)">
-        <ellipse cx={145.5} cy={260} rx={121.5} ry={40.5} fill="#212121" />
-      </g>
       <circle
-        cx={144.5}
-        cy={131}
-        r={126.5}
+        cx="130.5"
+        cy="130.5"
+        r="126.5"
         fill="#fff"
         stroke="#212121"
-        strokeWidth={8}
-      />
+        strokeWidth="8"
+      ></circle>
       <mask
-        id="b"
-        style={{
-          maskType: "alpha"
-        }}
+        id="mask0_63_50"
+        style={{ maskType: "alpha" }}
+        width="247"
+        height="247"
+        x="7"
+        y="7"
         maskUnits="userSpaceOnUse"
-        x={21}
-        y={8}
-        width={247}
-        height={246}
       >
-        <circle cx={144.5} cy={131} r={122.748} fill="#fff" />
+        <circle cx="130.5" cy="130.5" r="122.748" fill="#fff"></circle>
       </mask>
-      <g mask="url(#b)">
+      <g mask="url(#mask0_63_50)">
         <path
-          d="M275 131A130.497 130.497 0 0 0 144.5.5 130.5 130.5 0 0 0 14 131h261Z"
           fill="#C12E28"
-        />
-        <path fill="#212121" d="M19.168 120.663h250.663v20.673H19.168z" />
+          d="M261 130.5A130.497 130.497 0 00130.5 0 130.498 130.498 0 000 130.5h261z"
+        ></path>
+        <path
+          fill="#212121"
+          d="M5.168 120.163H255.83100000000002V140.83599999999998H5.168z"
+        ></path>
       </g>
       <circle
-        cx={144.5}
-        cy={131}
-        r={28.302}
+        cx="130.5"
+        cy="130.5"
+        r="28.302"
         fill="#fff"
         stroke="#212121"
-        strokeWidth={8}
-      />
-      <defs>
-        <filter
-          id="a"
-          x={0}
-          y={195.5}
-          width={291}
-          height={129}
-          filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
-          <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-          <feGaussianBlur stdDeviation={12} result="effect1_foregroundBlur_38_343" />
-        </filter>
-      </defs>
+        strokeWidth="8"
+      ></circle>
     </svg>
   );
 }

@@ -18,7 +18,7 @@
   }
 
   .pokedex-list {
-    div {
+    & > div {
       @include flex-container;
       flex-wrap: wrap;
       justify-content: space-between;
