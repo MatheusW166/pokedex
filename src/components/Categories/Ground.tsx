@@ -3,7 +3,7 @@ export function GroundBg(props: React.SVGProps<SVGSVGElement>) {
     <svg
       width={237}
       height={189}
-      viewBox="0 0 237 189"
+      viewBox="0 0 237 186"
       preserveAspectRatio="xMidYMax slice"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
