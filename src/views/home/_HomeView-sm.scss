@@ -1,0 +1,32 @@
+@media screen and (max-width: 715px) {
+  .home {
+    main {
+      & > section:nth-of-type(1) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 90%, 0 100%);
+        .container {
+          .title {
+            top: 35%;
+            max-width: 100%;
+          }
+
+          .logo-name {
+            width: 164px;
+          }
+
+          .pokeball-concept {
+            width: 592px;
+          }
+        }
+      }
+
+      .floating-ball {
+        width: 164px;
+        height: 164px;
+        right: auto;
+        left: 68%;
+        transform: translateX(-50%);
+        bottom: 40%;
+      }
+    }
+  }
+}

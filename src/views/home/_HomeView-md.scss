@@ -1,0 +1,16 @@
+@media screen and (max-width: 900px) {
+  .home {
+    main {
+      .floating-ball {
+        width: 220px;
+        height: 220px;
+        left: auto;
+        right: 24px;
+        transform: none;
+        &::after {
+          height: 40px;
+        }
+      }
+    }
+  }
+}

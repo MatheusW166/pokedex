@@ -1,6 +1,5 @@
 import { Pokedex } from "../../components/Pokedex";
 import { LogoName, PokeballConcept, Pokeball } from "../../components/Logos";
-import { ShapeDividerTriangle } from "../../components/Separators";
 
 export function HomeView() {
   return (
@@ -13,15 +12,12 @@ export function HomeView() {
               <h1>Find your favorite Pokemons!</h1>
               <p>Search and find all information about it.</p>
             </div>
-            <div className="floating-ball">
-              <Pokeball />
-            </div>
             <PokeballConcept />
           </div>
-          <div className="divider">
-            <ShapeDividerTriangle />
-          </div>
         </section>
+        <div className="floating-ball">
+          <Pokeball />
+        </div>
         <section>
           <h2>Pokedex</h2>
           <Pokedex />
