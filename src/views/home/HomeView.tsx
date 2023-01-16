@@ -15,8 +15,10 @@ export function HomeView() {
             <PokeballConcept />
           </div>
         </section>
-        <div className="floating-ball">
-          <Pokeball />
+        <div className="floating-ball-container">
+          <div className="floating-ball">
+            <Pokeball />
+          </div>
         </div>
         <section>
           <h2>Pokedex</h2>
