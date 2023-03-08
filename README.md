@@ -1,6 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/MatheusW166/pokedex/edit/main/LICENCE)
 
 # Pokedex app
-Página disponível [aqui](https://matheusw166.github.io/pokedex/).
+Página disponível [aqui](pokedex-blush-three.vercel.app).
 
-Em construção.
