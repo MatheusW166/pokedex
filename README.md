@@ -18,7 +18,7 @@ A aplicação consiste em uma Pokedex com paginação, onde o usuário pode visu
 #### Clonar repositório
 
 ```bash
-git clone https://github.com/MatheusW166/postify-backend.git
+git clone https://github.com/MatheusW166/pokedex.git
 ```
 
 #### Rodar em modo dev
